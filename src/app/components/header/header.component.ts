@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,13 +9,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  @Input() menuOpen = false;
+
   @Output() menuToggle = new EventEmitter<void>();
   @Output() logout = new EventEmitter<void>();
 
-  menuOpen = false;
-
   onMenuClick(): void {
-    this.menuOpen = !this.menuOpen;
     this.menuToggle.emit();
   }
 

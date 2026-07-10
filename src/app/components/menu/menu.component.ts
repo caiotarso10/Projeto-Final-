@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnDestroy, AfterViewInit, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -11,16 +11,35 @@ declare var bootstrap: any;
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
+export class MenuComponent implements AfterViewInit, OnDestroy {
   @ViewChild('menuOffcanvas') menuOffcanvasRef!: ElementRef;
 
+  @Output() openChange = new EventEmitter<boolean>();
+
   private offcanvasInstance: any;
+
+  private onShow = () => this.openChange.emit(true);
+  private onHide = () => this.openChange.emit(false);
 
   private getInstance(): any {
     if (!this.offcanvasInstance) {
       this.offcanvasInstance = new bootstrap.Offcanvas(this.menuOffcanvasRef.nativeElement);
     }
     return this.offcanvasInstance;
+  }
+
+  ngAfterViewInit(): void {
+    const el = this.menuOffcanvasRef.nativeElement;
+    el.addEventListener('shown.bs.offcanvas', this.onShow);
+    el.addEventListener('hidden.bs.offcanvas', this.onHide);
+  }
+
+  ngOnDestroy(): void {
+    const el = this.menuOffcanvasRef?.nativeElement;
+    if (el) {
+      el.removeEventListener('shown.bs.offcanvas', this.onShow);
+      el.removeEventListener('hidden.bs.offcanvas', this.onHide);
+    }
   }
 
   toggle(): void {

@@ -10,7 +10,9 @@ import { MenuComponent } from '../../components/menu/menu.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  isMenuOpen = false;
+
   handleLogout(): void {
-    // sua lógica de logout aqui
+  
   }
 }

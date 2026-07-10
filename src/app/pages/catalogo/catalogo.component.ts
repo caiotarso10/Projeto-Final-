@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from '../../components/header/header.component';
+import { MenuComponent } from '../../components/menu/menu.component';
 
 @Component({
-  selector: 'app-catalogo',
-  imports: [],
+  selector: 'app-home',
+  standalone: true,
+  imports: [HeaderComponent, MenuComponent],
   templateUrl: './catalogo.component.html',
-  styleUrl: './catalogo.component.css'
+  styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent {
+  handleLogout(): void {
 
+  }
 }

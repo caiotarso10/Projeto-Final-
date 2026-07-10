@@ -1,6 +1,11 @@
-<app-header (menuToggle)="menu.toggle()" (logout)="handleLogout()"></app-header>
-<app-menu #menu></app-menu>
+<app-header
+  [menuOpen]="isMenuOpen"
+  (menuToggle)="menu.toggle()"
+  (logout)="handleLogout()">
+</app-header>
+
+<app-menu #menu (openChange)="isMenuOpen = $event"></app-menu>
 
 <div class="container-fluid p-4">
-  
+
 </div>
