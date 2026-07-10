@@ -1,25 +1,47 @@
-<p>menu works!</p><button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-  Button with data-bs-target
-</button>
+<div
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  #menuOffcanvas
+  id="appMenu"
+  aria-labelledby="appMenuLabel">
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title" id="appMenuLabel">Menu</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Fechar"
+      (click)="close()">
+    </button>
   </div>
-  <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
+
+  <div class="offcanvas-body p-0">
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-2" routerLink="/home" routerLinkActive="active" (click)="close()">
+          <i class="bi bi-house"></i>
+          Início
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-2" routerLink="/catalogo" routerLinkActive="active" (click)="close()">
+          <i class="bi bi-grid"></i>
+          Catálogo
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-2" routerLink="/compra" routerLinkActive="active" (click)="close()">
+          <i class="bi bi-cart"></i>
+          Compra
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-2" routerLink="/cadastro" routerLinkActive="active" (click)="close()">
+          <i class="bi bi-person-plus"></i>
+          Cadastro
+        </a>
+      </li>
+    </ul>
   </div>
+
 </div>

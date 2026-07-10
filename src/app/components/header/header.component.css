@@ -1,0 +1,14 @@
+:host {
+  --header-height: 64px;
+  display: block;
+}
+
+.navbar {
+  overflow: hidden;
+}
+
+.logo-img {
+  max-height: 200px;
+  width: auto;
+  object-fit: contain;
+}

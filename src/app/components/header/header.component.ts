@@ -1,11 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  @Output() menuToggle = new EventEmitter<void>();
+  @Output() logout = new EventEmitter<void>();
 
+  menuOpen = false;
+
+  onMenuClick(): void {
+    this.menuOpen = !this.menuOpen;
+    this.menuToggle.emit();
+  }
+
+  onLogoutClick(): void {
+    this.logout.emit();
+  }
 }

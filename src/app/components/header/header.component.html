@@ -1,3 +1,28 @@
-<header class="navbar navbar-light bg-white border-bottom px-3" style="height: 64px;">
+<header class="navbar navbar-light bg-white border-bottom px-3 shadow " style="height: 64px;">
+  <div class="container-fluid d-flex align-items-center justify-content-between p-0 h-100 position-relative">
 
+    <button
+      class="btn btn-link text-dark p-2"
+      type="button"
+      (click)="onMenuClick()"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Abrir menu">
+      <i class="bi" [class.bi-list]="!menuOpen" [class.bi-x-lg]="menuOpen" style="font-size: 1.5rem;"></i>
+    </button>
+
+
+   <div class="position-absolute top-0 start-50 translate-middle-x h-100 d-flex align-items-center" style="pointer-events: none; max-width: 60%;">
+  <img src="/assents/logo.png" alt="Logo da empresa" class="logo-img" />
+    </div>
+
+    <button
+      class="btn btn-outline-danger d-flex align-items-center gap-2"
+      type="button"
+      (click)="onLogoutClick()"
+      aria-label="Sair">
+      <i class="bi bi-box-arrow-right"></i>
+      <span class="d-none d-sm-inline">Sair</span>
+    </button>
+
+  </div>
 </header>
