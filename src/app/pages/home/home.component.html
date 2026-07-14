@@ -6,6 +6,24 @@
 
 <app-menu #menu (openChange)="isMenuOpen = $event"></app-menu>
 
-<div class="container-fluid p-4">
+<app-carrossel></app-carrossel>
 
+<div class="container-fluid p-4">
+  
+  <section class="home-produtos">
+    <h2 class="text-center mb-4">Produtos Mais Vendidos</h2>
+    
+  
+    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+      
+      <app-card-home 
+        *ngFor="let prod of produtosMaisVendidos"
+        [produto]="prod">
+      </app-card-home>
+      
+    </div>
+  </section>
 </div>
+
+
+

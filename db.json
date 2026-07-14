@@ -1,0 +1,131 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "L'eau de Lily",
+      "descricao": "Desodorante Colônia 75ml",
+      "preco": 229.90,
+      "imagem": "/assents/lily.png"
+      
+    },
+    {
+      "id": 2,
+      "nome": "Floratta Red",
+      "descricao": "Desodorante Colônia 75ml",
+      "preco": 149.90,
+      "imagem": "/assents/floratta-red.png"
+    },
+    {
+      "id": 3,
+      "nome": "Malbec",
+      "descricao": "Desodorante Colônia 100ml",
+      "preco": 209.90,
+      "imagem": "/assents/malbec.png"
+    },
+    {
+      "id": 4,
+      "nome": "Styletto",
+      "descricao": "Desodorante Colônia 100ml",
+      "preco": 139.90,
+      "imagem": "/assents/styletto.png"
+    },
+    {
+      "id": 5,
+      "nome": "Floratta Rose",
+      "descricao": "Desodorante Colônia 75ml",
+      "preco": 149.90,
+      "imagem": "/assents/floratta-rose.png"
+    },
+    {
+      "id": 6,
+      "nome": "Portinari",
+      "descricao": "Desodorante Colônia 100ml",
+      "preco": 169.90,
+      "imagem": "/assents/portinari.png"
+    },
+    {
+      "id": 7,
+      "nome": "Biografia",
+      "descricao": "Desodorante Colônia 100ml",
+      "preco": 174.90,
+      "imagem": "/assents/biografia.png"
+    },
+    {
+      "id": 8,
+      "nome": "Humor Envolve",
+      "descricao": "Desodorante Colônia 75ml",
+      "preco": 145.90,
+      "imagem": "/assents/humor-envolve.png"
+    },
+    {
+      "id": 9,
+      "nome": "Kaiak Aero",
+      "descricao": "Desodorante Colônia 100ml",
+      "preco": 169.90,
+      "imagem": "/assents/kaiak-aero.png"
+    },
+    {
+      "id": 10,
+      "nome": "Humor a Dois",
+      "descricao": "Desodorante Colônia 75ml",
+      "preco": 145.90,
+      "imagem": "/assents/humor-a-dois.png"
+    },
+    {
+      "id": 11,
+      "nome": "Humor Próprio",
+      "descricao": "Desodorante Colônia 75ml",
+      "preco": 145.90,
+      "imagem": "/assents/humor-proprio.png"
+    },
+    {
+      "id": 12,
+      "nome": "Celebre sua Força",
+      "descricao": "Desodorante Colônia 100ml",
+      "preco": 94.90,
+      "imagem": "/assents/celebre-sua-forca.png"
+    },
+    {
+      "id": 13,
+      "nome": "Shampoo e Condicionador Eudora Siàge Liso Intenso",
+      "descricao": "Kit Capilar Shampoo 250ml e Condicionador 200ml",
+      "preco": 119.90,
+      "imagem": "/assents/siage-liso-intenso.png"
+    },
+    {
+      "id": 14,
+      "nome": "Sabonete Eudora Instance Rosa Absoluta",
+      "descricao": "Sabonete em Barra 5 unidades de 85g",
+      "preco": 29.99,
+      "imagem": "/assents/instance-rosa-absoluta.png"
+    },
+    {
+      "id": 15,
+      "nome": "Sabonete Eudora Instance Sortidos",
+      "descricao": "Sabonete em Barra 5 unidades de 85g",
+      "preco": 29.99,
+      "imagem": "/assents/instance-sortidos.png"
+    },
+    {
+      "id": 16,
+      "nome": "Combo Siàge Acelera o Crescimento",
+      "descricao": "Kit Capilar Shampoo 250ml e Condicionador 200ml",
+      "preco": 119.90,
+      "imagem": "/assents/siage-acelera-crescimento.png"
+    },
+    {
+      "id": 17,
+      "nome": "Combo Siàge Volume Imediato",
+      "descricao": "Kit Capilar Shampoo 250ml e Condicionador 200ml",
+      "preco": 119.90,
+      "imagem": "/assents/siage-volume-imediato.png"
+    },
+    {
+      "id": 18,
+      "nome": "Máscara Capilar Siàge Cica Therapy",
+      "descricao": "Máscara de Tratamento Capilar 250g",
+      "preco": 69.99,
+      "imagem": "/assents/siage-cica-therapy.png"
+    }
+  ]
+}

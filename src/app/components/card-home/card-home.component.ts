@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Importante para o pipe de moeda (| currency) funcionar
 
 @Component({
   selector: 'app-card-home',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule], 
   templateUrl: './card-home.component.html',
-  styleUrl: './card-home.component.css'
+  styleUrls: ['./card-home.component.css']
 })
 export class CardHomeComponent {
-
+  @Input() produto: any;
 }
