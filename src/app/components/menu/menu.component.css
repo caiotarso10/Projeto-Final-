@@ -4,16 +4,16 @@
 
 .nav-link {
   padding: 12px 20px;
-  color: #1f2937;
+  color: #5c5c5c;
   border-radius: 0;
 }
 
 .nav-link:hover {
-  background-color: #f3f4f6;
+  background-color: #ffe3e6
 }
 
 .nav-link.active {
-  background-color: #4f46e5;
+  background-color: #e88a8a;
   color: #ffffff;
 }
 

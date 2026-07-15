@@ -1,3 +1,36 @@
+<app-header
+  [menuOpen]="isMenuOpen"
+  (menuToggle)="menu.toggle()"
+  (logout)="handleLogout()">
+</app-header>
+
+<app-menu #menu (openChange)="isMenuOpen = $event"></app-menu>
+
+<main class="catalogo-container">
+  <h1 class="titulo-pagina">Catálogo de Produtos</h1>
+
+  <div class="filtro-container">
+    <label for="filtroMarca">Filtrar por Marca:</label>
+    <select id="filtroMarca" [(ngModel)]="marcaSelecionada" (change)="filtrarPorMarca()">
+      <option *ngFor="let marca of marcasDisponiveis" [value]="marca">
+        {{ marca }}
+      </option>
+    </select>
+  </div>
+
  
-<app-header (menuToggle)="menu.toggle()"(logout)="handleLogout()"></app-header>
-<app-menu #menu></app-menu>
+  <div class="grid-produtos">
+   
+    <app-card-home 
+      *ngFor="let produto of produtosExibidos" 
+      [produto]="produto">
+    </app-card-home>
+  </div>
+
+
+  <div *ngIf="produtosExibidos.length === 0" class="sem-produtos">
+    <p>Nenhum produto encontrado.</p>
+  </div>
+</main>
+
+<app-footer></app-footer>

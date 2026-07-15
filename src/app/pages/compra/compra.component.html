@@ -1,1 +1,47 @@
-<p>compra works!</p>
+<app-header
+  [menuOpen]="isMenuOpen"
+  (menuToggle)="menu.toggle()"
+  (logout)="handleLogout()">
+</app-header>
+
+<app-menu #menu (openChange)="isMenuOpen = $event"></app-menu>
+
+<main class="compra-container">
+  <h1 class="titulo">Finalizar Compra</h1>
+
+  <div class="compra-vazia" *ngIf="itensComprados.length === 0 && !compraSucesso">
+    <p>Nenhum item selecionado para compra.</p>
+    <a routerLink="/catalogo" class="btn-voltar">Ir para o Catálogo</a>
+  </div>
+
+  <div class="compra-conteudo" *ngIf="itensComprados.length > 0">
+    <div class="resumo-pedido">
+      <h2>Revisão do Pedido</h2>
+      
+      <ul class="lista-revisao">
+        <li *ngFor="let item of itensComprados">
+          <span>{{ item.quantidade }}x {{ item.nome }}</span>
+          <span>R$ {{ (item.preco * item.quantidade) | number:'1.2-2' }}</span>
+        </li>
+      </ul>
+
+      <div class="linha-total">
+        <span>Total a Pagar:</span>
+        <span>R$ {{ valorTotal | number:'1.2-2' }}</span>
+      </div>
+      
+      <button class="btn-comprar" (click)="finalizarCompra()">Comprar</button>
+    </div>
+  </div>
+</main>
+
+<div class="modal-overlay" *ngIf="compraSucesso">
+  <div class="modal-content">
+    <div class="modal-icon">✨</div>
+    <h2>Compra realizada com sucesso!</h2>
+    <p>Seu pedido está sendo processado. Agradecemos por escolher a L.D.essence!</p>
+    <button class="btn-fechar-modal" (click)="fecharPopup()" routerLink="/home">Voltar ao Início</button>
+  </div>
+</div>
+
+<app-footer></app-footer>

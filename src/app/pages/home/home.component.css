@@ -1,0 +1,36 @@
+.home-produtos {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.home-produtos h2 {
+  color: #e88a8a;
+  font-family: serif;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+}
+
+.home-produtos > div {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.home-produtos .card-title,
+.home-produtos .card-desc,
+.home-produtos .card-preco {
+  color: #5c5c5c;
+  font-family: serif;
+}
+
+@media (max-width: 576px) {
+  .home-produtos h2 {
+    font-size: 1.8rem;
+  }
+
+  .home-produtos > div {
+    gap: 16px;
+  }
+}

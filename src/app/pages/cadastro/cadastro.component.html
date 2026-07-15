@@ -1,1 +1,41 @@
-<p>cadastro works!</p>
+<main class="auth-page">
+  <div class="auth-card">
+    <h1 class="auth-title">Criar Conta</h1>
+    <p class="auth-subtitle">Cadastre-se na L.D.essence e aproveite ofertas exclusivas.</p>
+
+    <div class="alerta alerta-erro" *ngIf="erroMensagem">{{ erroMensagem }}</div>
+    <div class="alerta alerta-sucesso" *ngIf="sucessoMensagem">{{ sucessoMensagem }}</div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" [(ngModel)]="nome" class="form-control" placeholder="Como devemos te chamar?" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email-cad">E-mail</label>
+        <input type="email" id="email-cad" name="email" [(ngModel)]="email" class="form-control" placeholder="exemplo@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="senha-cad">Crie uma Senha</label>
+        <input type="password" id="senha-cad" name="senha" [(ngModel)]="senha" class="form-control" placeholder="Mínimo 6 caracteres" required>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="lgpd" name="lgpd" [(ngModel)]="aceitouLGPD" required>
+        <label for="lgpd" class="label-checkbox">
+          Li e aceito os <a href="https://www.gov.br/mds/pt-br/acesso-a-informacao/governanca/integridade/campanhas/lgpd" target="_blank" class="link-termos">Termos de Uso</a> e a Política de Privacidade conforme a LGPD.
+        </label>
+      </div>
+
+      <button type="submit" class="btn-auth" [disabled]="!aceitouLGPD || !nome || !email || !senha">
+        Finalizar Cadastro
+      </button>
+    </form>
+
+    <div class="auth-links">
+      <p>Já tem uma conta? <a routerLink="/login">Faça Login</a></p>
+    </div>
+  </div>
+</main>

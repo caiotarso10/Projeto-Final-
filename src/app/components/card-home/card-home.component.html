@@ -3,8 +3,7 @@
   <div class="card-body">
     <h3 class="card-title">{{ produto.nome }}</h3>
     <p class="card-desc">{{ produto.descricao }}</p>
-    
     <p class="card-preco">{{ produto.preco | currency:'BRL':'symbol':'1.2-2' }}</p>
-    <button class="btn-comprar">Comprar</button>
+    <button class="btn-comprar" type="button" (click)="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
   </div>
 </div>
