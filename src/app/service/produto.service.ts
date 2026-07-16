@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class ProdutoService {
   private http = inject(HttpClient);
   
-  private apiUrl = 'http://localhost:3000/produtos';
-  private urlBanners = 'http://localhost:3000/banners'; // Criamos uma variável para facilitar
+  private apiUrl = 'http://localhost:3001/produtos';
+  private urlBanners = 'http://localhost:3001/banners'; 
 
   // --- MÉTODOS DE PRODUTOS ---
 

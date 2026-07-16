@@ -147,7 +147,7 @@
   ],
   "banners": [
     {
-    "id" : "1",
+      "id": "1",
       "titulo": "Eudora",
       "imagem": "/assents/eudora-logo.png",
       "marca": "eudora"

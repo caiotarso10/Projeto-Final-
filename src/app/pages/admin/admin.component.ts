@@ -98,7 +98,7 @@ export class AdminComponent implements OnInit {
 
   resetarFormulario() {
     this.modoEdicao = false;
-    // 👈 Atualizado para limpar a descrição também
+  
     this.produtoAtual = { nome: '', preco: null, marca: '', descricao: '', imagem: '', quantidade: 1 };
   }
 
