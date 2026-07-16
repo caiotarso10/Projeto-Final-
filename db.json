@@ -1,112 +1,111 @@
 {
   "produtos": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "L'eau de Lily",
       "marca": "Oboticario",
       "descricao": "Desodorante Colônia 75ml",
-      "preco": 229.90,
+      "preco": 229.9,
       "imagem": "/assents/lily.png"
-      
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Floratta Red",
       "marca": "Oboticario",
       "descricao": "Desodorante Colônia 75ml",
-      "preco": 149.90,
+      "preco": 149.9,
       "imagem": "/assents/floratta-red.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Malbec",
       "marca": "Oboticario",
       "descricao": "Desodorante Colônia 100ml",
-      "preco": 209.90,
+      "preco": 209.9,
       "imagem": "/assents/malbec.png"
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Styletto",
       "marca": "Oboticario",
       "descricao": "Desodorante Colônia 100ml",
-      "preco": 139.90,
+      "preco": 139.9,
       "imagem": "/assents/styletto.png"
     },
     {
-      "id": 5,
+      "id": "5",
       "nome": "Floratta Rose",
       "marca": "Oboticario",
       "descricao": "Desodorante Colônia 75ml",
-      "preco": 149.90,
+      "preco": 149.9,
       "imagem": "/assents/floratta-rose.png"
     },
     {
-      "id": 6,
+      "id": "6",
       "nome": "Portinari",
       "marca": "Oboticario",
       "descricao": "Desodorante Colônia 100ml",
-      "preco": 169.90,
+      "preco": 169.9,
       "imagem": "/assents/portinari.png"
     },
     {
-      "id": 7,
+      "id": "7",
       "nome": "Biografia",
       "marca": "natura",
       "descricao": "Desodorante Colônia 100ml",
-      "preco": 174.90,
+      "preco": 174.9,
       "imagem": "/assents/biografia.png"
     },
     {
-      "id": 8,
+      "id": "8",
       "nome": "Humor Envolve",
       "marca": "natura",
       "descricao": "Desodorante Colônia 75ml",
-      "preco": 145.90,
+      "preco": 145.9,
       "imagem": "/assents/humor-envolve.png"
     },
     {
-      "id": 9,
+      "id": "9",
       "nome": "Kaiak Aero",
       "marca": "natura",
       "descricao": "Desodorante Colônia 100ml",
-      "preco": 169.90,
+      "preco": 169.9,
       "imagem": "/assents/kaiak-aero.png"
     },
     {
-      "id": 10,
+      "id": "10",
       "nome": "Humor a Dois",
       "marca": "natura",
       "descricao": "Desodorante Colônia 75ml",
-      "preco": 145.90,
+      "preco": 145.9,
       "imagem": "/assents/humor-a-dois.png"
     },
     {
-      "id": 11,
+      "id": "11",
       "nome": "Humor Próprio",
       "marca": "natura",
       "descricao": "Desodorante Colônia 75ml",
-      "preco": 145.90,
+      "preco": 145.9,
       "imagem": "/assents/humor-proprio.png"
     },
     {
-      "id": 12,
+      "id": "12",
       "nome": "Celebre sua Força",
       "marca": "Oboticario",
       "descricao": "Desodorante Colônia 100ml",
-      "preco": 94.90,
+      "preco": 94.9,
       "imagem": "/assents/celebre-sua-forca.png"
     },
     {
-      "id": 13,
+      "id": "13",
       "nome": "Shampoo e Condicionador Eudora Siàge Liso Intenso",
       "marca": "eudora",
       "descricao": "Kit Capilar Shampoo 250ml e Condicionador 200ml",
-      "preco": 119.90,
+      "preco": 119.9,
       "imagem": "/assents/siage-liso-intenso.png"
     },
     {
-      "id": 14,
+      "id": "14",
       "nome": "Sabonete Eudora Instance Rosa Absoluta",
       "marca": "eudora",
       "descricao": "Sabonete em Barra 5 unidades de 85g",
@@ -114,7 +113,7 @@
       "imagem": "/assents/instance-rosa-absoluta.png"
     },
     {
-      "id": 15,
+      "id": "15",
       "nome": "Sabonete Eudora Instance Sortidos",
       "marca": "eudora",
       "descricao": "Sabonete em Barra 5 unidades de 85g",
@@ -122,28 +121,49 @@
       "imagem": "/assents/instance-sortidos.png"
     },
     {
-      "id": 16,
+      "id": "16",
       "nome": "Combo Siàge Acelera o Crescimento",
       "marca": "eudora",
       "descricao": "Kit Capilar Shampoo 250ml e Condicionador 200ml, Máscara Capilar 250g",
-      "preco": 119.90,
+      "preco": 119.9,
       "imagem": "/assents/siage-acelera-crescimento.png"
     },
     {
-      "id": 17,
+      "id": "17",
       "nome": "Combo Siàge Volume Imediato",
       "marca": "eudora",
       "descricao": "Kit Capilar Shampoo 250ml e Condicionador 200ml",
-      "preco": 119.90,
+      "preco": 119.9,
       "imagem": "/assents/siage-volume-imediato.png"
     },
     {
-      "id": 18,
+      "id": "18",
       "nome": "Máscara Capilar Siàge Cica Therapy",
       "marca": "eudora",
       "descricao": "Máscara de Tratamento Capilar 250g",
       "preco": 69.99,
       "imagem": "/assents/siage-cica-therapy.png"
     }
-  ]
+  ],
+  "banners": [
+    {
+    "id" : "1",
+      "titulo": "Eudora",
+      "imagem": "/assents/eudora-logo.png",
+      "marca": "eudora"
+    },
+    {
+      "id": "2",
+      "titulo": "Natura",
+      "imagem": "/assents/natura-logo.png",
+      "marca": "natura"
+    },
+    {
+      "id": "3",
+      "titulo": "O Boticário",
+      "imagem": "/assents/oboticario-logo.png",
+      "marca": "oboticario"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

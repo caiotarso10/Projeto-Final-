@@ -31,9 +31,16 @@ export class LoginComponent {
     if (logado) {
       this.erroMensagem = '';
       
-      
-      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || "home";
-      this.router.navigateByUrl(returnUrl);
+      if (this.authService.isAdmin()) {
+        
+        this.router.navigate(['/admin']);
+        
+      } else {
+        const returnUrl = this.route.snapshot.queryParams['returnUrl'] || "home";
+        
+        this.router.navigateByUrl(returnUrl);
+      }
+
     } else {
       this.erroMensagem = 'E-mail ou senha inválidos. Por favor, cadastre-se se for seu primeiro acesso.';
     }

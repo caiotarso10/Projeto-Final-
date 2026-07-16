@@ -13,6 +13,27 @@
   text-align: center;
 }
 
+.compra-vazia {
+  text-align: center;
+  margin-top: 50px;
+  color: #5c5c5c;
+}
+
+.btn-voltar {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e88a8a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-voltar:hover {
+  background-color: #ffb1b1;
+}
+
 .resumo-pedido {
   background-color: #fff;
   border: 1px solid #ffe3e6;
@@ -37,10 +58,35 @@
 .lista-revisao li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
   padding: 10px 0;
   color: #7a7a7a;
   border-bottom: 1px dashed #eee;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 15px;
+}
+
+.btn-remover {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.btn-remover:hover {
+  background-color: #fff0f0;
+  color: #cc0000;
 }
 
 .linha-total {
@@ -52,9 +98,32 @@
   margin-bottom: 25px;
 }
 
+.acoes-compra {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-esvaziar {
+  background-color: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  border-radius: 8px;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-esvaziar:hover {
+  background-color: #ff4d4d;
+  color: #ffffff;
+}
+
 .btn-comprar {
-  width: 100%;
-  padding: 15px;
+  padding: 15px 40px;
   background-color: #e88a8a;
   color: #fff;
   border: none;
@@ -63,6 +132,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  flex: 1;
 }
 
 .btn-comprar:hover {
@@ -98,9 +168,23 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
-.modal-icon { font-size: 3rem; margin-bottom: 10px; }
-.modal-content h2 { color: #e88a8a; font-family: serif; margin-bottom: 15px; font-size: 1.8rem; }
-.modal-content p { color: #5c5c5c; margin-bottom: 25px; line-height: 1.6; }
+.modal-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.modal-content h2 {
+  color: #e88a8a;
+  font-family: serif;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.modal-content p {
+  color: #5c5c5c;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
 
 .btn-fechar-modal {
   background-color: #e88a8a;
@@ -113,7 +197,10 @@
   cursor: pointer;
   transition: 0.3s;
 }
-.btn-fechar-modal:hover { background-color: #ffb1b1; }
+
+.btn-fechar-modal:hover {
+  background-color: #ffb1b1;
+}
 
 @media (max-width: 576px) {
   .titulo {
@@ -124,11 +211,38 @@
     padding: 20px;
   }
 
-  .lista-revisao li,
+  .lista-revisao li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .item-info {
+    flex-direction: column;
+    gap: 5px;
+    margin-right: 0;
+  }
+
+  .btn-remover {
+    align-self: flex-end;
+    border: 1px solid #ff4d4d;
+  }
+
   .linha-total {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+  }
+
+  .acoes-compra {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .btn-esvaziar, .btn-comprar {
+    width: 100%;
+    text-align: center;
+    flex: none;
   }
 
   .modal-content {

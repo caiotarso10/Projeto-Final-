@@ -15,15 +15,14 @@ import { MenuComponent } from '../../components/menu/menu.component';
 })
 export class CompraComponent implements OnInit {
 
-isMenuOpen = false;
+  isMenuOpen = false;
 
-handleLogout(): void{}
+  handleLogout(): void{}
 
   private cartService = inject(CartService);
 
   itensComprados: any[] = [];
   valorTotal: number = 0;
-  
   
   compraSucesso: boolean = false; 
 
@@ -37,6 +36,18 @@ handleLogout(): void{}
       const quantidade = item.quantidade ?? 1;
       return total + (item.preco * quantidade);
     }, 0);
+  }
+
+  removerItem(produtoId: number) {
+    this.cartService.removerItem(produtoId);
+    this.itensComprados = this.cartService.getCartItems();
+    this.calcularTotal();
+  }
+
+  esvaziarCarrinho() {
+    this.cartService.clearCart();
+    this.itensComprados = [];
+    this.valorTotal = 0;
   }
 
   finalizarCompra() {

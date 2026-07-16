@@ -50,4 +50,15 @@ export class AuthService {
     localStorage.removeItem('ld_current_user');
     this.router.navigate(['/']);
   }
+  
+  isAdmin(): boolean {
+    const userStr = localStorage.getItem('ld_current_user');
+    if (userStr) {
+      const user = JSON.parse(userStr);
+      
+      return user.email === 'admin@ldessence.com'; 
+    }
+    return false;
+  }
 }
+

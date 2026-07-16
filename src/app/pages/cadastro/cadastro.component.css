@@ -18,6 +18,11 @@
   text-align: center;
 }
 
+.auth-title{
+  font-family: serif;
+  color: #e88a8a;
+}
+
 .auth-img {
     max-height: 100px;
     justify-content: center;
@@ -30,7 +35,7 @@
   margin-bottom: 30px;
 }
 
-/* Estilo dos campos de formulário */
+
 .form-group {
   margin-bottom: 20px;
   text-align: left;
@@ -124,7 +129,7 @@
 .checkbox-group input[type="checkbox"] {
   margin-top: 3px;
   cursor: pointer;
-  accent-color: #e88a8a; /* Mantém a bolinha/marcador rosa */
+  accent-color: #e88a8a;
 }
 
 .label-checkbox {
@@ -139,9 +144,9 @@
   text-decoration: underline;
 }
 
-/* Estado desabilitado do botão */
+
 .btn-auth:disabled {
-  background-color: #f5cfd2 !important; /* Rosa bem opaco */
+  background-color: #f5cfd2 !important; 
   cursor: not-allowed;
   opacity: 0.8;
 }

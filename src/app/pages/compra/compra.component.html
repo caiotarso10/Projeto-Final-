@@ -20,8 +20,11 @@
       
       <ul class="lista-revisao">
         <li *ngFor="let item of itensComprados">
-          <span>{{ item.quantidade }}x {{ item.nome }}</span>
-          <span>R$ {{ (item.preco * item.quantidade) | number:'1.2-2' }}</span>
+          <div class="item-info">
+            <span>{{ item.quantidade }}x {{ item.nome }}</span>
+            <span>R$ {{ (item.preco * item.quantidade) | number:'1.2-2' }}</span>
+          </div>
+          <button class="btn-remover" (click)="removerItem(item.id)">Remover</button>
         </li>
       </ul>
 
@@ -30,7 +33,10 @@
         <span>R$ {{ valorTotal | number:'1.2-2' }}</span>
       </div>
       
-      <button class="btn-comprar" (click)="finalizarCompra()">Comprar</button>
+      <div class="acoes-compra">
+        <button class="btn-esvaziar" (click)="esvaziarCarrinho()">Esvaziar Carrinho</button>
+        <button class="btn-comprar" (click)="finalizarCompra()">Comprar</button>
+      </div>
     </div>
   </div>
 </main>

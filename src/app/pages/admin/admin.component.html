@@ -1,0 +1,151 @@
+<app-header
+  [menuOpen]="isMenuOpen"
+  (menuToggle)="menu.toggle()"
+  (logout)="handleLogout()">
+</app-header>
+
+<app-menu #menu (openChange)="isMenuOpen = $event"></app-menu>
+
+<main class="admin-container container my-5">
+  <h1 class="titulo-admin">Painel Administrativo</h1>
+
+  <div class="abas">
+    <button [class.ativo]="abaAtual === 'produtos'" (click)="mudarAba('produtos')">Gerenciar Produtos</button>
+    <button [class.ativo]="abaAtual === 'carrossel'" (click)="mudarAba('carrossel')">Gerenciar Carrossel</button>
+  </div>
+
+  <div *ngIf="mensagem" class="alerta-sucesso">
+    {{ mensagem }}
+  </div>
+
+  <div *ngIf="abaAtual === 'produtos'" class="conteudo-aba">
+    
+    <section class="formulario-section">
+      <h2>{{ modoEdicao ? 'Editar Produto' : 'Novo Produto' }}</h2>
+      <form (ngSubmit)="salvarProduto()" class="form-produto">
+        
+        <div class="form-group">
+          <label>Nome do Produto</label>
+          <input type="text" name="nome" [(ngModel)]="produtoAtual.nome" required placeholder="Ex: Kaiak Pulso">
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preço (R$)</label>
+            <input type="number" name="preco" [(ngModel)]="produtoAtual.preco" required placeholder="Ex: 149.90">
+          </div>
+          <div class="form-group">
+            <label>Marca</label>
+            <input type="text" name="marca" [(ngModel)]="produtoAtual.marca" required placeholder="Ex: Natura">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>URL da Imagem</label>
+          <input type="text" name="imagem" [(ngModel)]="produtoAtual.imagem" required placeholder="https://link-da-imagem.com/foto.jpg">
+        </div>
+
+        <div class="form-group">
+          <label>Descrição do Produto</label>
+          <textarea name="descricao" [(ngModel)]="produtoAtual.descricao" rows="3" placeholder="Detalhes do produto..."></textarea>
+        </div>
+
+        <div class="form-acoes">
+          <button type="button" class="btn-cancelar" *ngIf="modoEdicao" (click)="resetarFormulario()">Cancelar</button>
+          <button type="submit" class="btn-salvar">{{ modoEdicao ? 'Atualizar Produto' : 'Adicionar Produto' }}</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="tabela-section">
+      <h2>Catálogo Atual</h2>
+      <div class="table-responsive">
+        <table class="tabela-admin">
+          <thead>
+            <tr>
+              <th>Imagem</th>
+              <th>Nome</th>
+              <th>Marca</th>
+              <th>Descrição</th> <th>Preço</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let prod of produtos">
+              <td><img [src]="prod.imagem" alt="Produto" class="img-miniatura"></td>
+              <td>{{ prod.nome }}</td>
+              <td>{{ prod.marca }}</td>
+              <td>{{ prod.descricao || 'Sem descrição' }}</td> <td>R$ {{ prod.preco | number:'1.2-2' }}</td>
+              <td class="acoes-td">
+                <button class="btn-editar" (click)="editarProduto(prod)">Editar</button>
+                <button class="btn-excluir" (click)="excluirProduto(prod.id)">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <div *ngIf="abaAtual === 'carrossel'" class="conteudo-aba">
+    
+    <section class="formulario-section">
+      <h2>Adicionar Novo Banner ao Carrossel</h2>
+      <form (ngSubmit)="salvarBanner()" class="form-produto">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Título (Opcional)</label>
+            <input type="text" name="tituloBanner" [(ngModel)]="novoBanner.titulo" placeholder="Ex: Dia das Mães Natura">
+          </div>
+          <div class="form-group">
+            <label>Marca vinculada (Opcional)</label>
+            <input type="text" name="marcaBanner" [(ngModel)]="novoBanner.marca" placeholder="Ex: natura (para filtrar ao clicar)">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>URL da Imagem *</label>
+          <input type="text" name="imagemBanner" [(ngModel)]="novoBanner.imagem" required placeholder="https://link-da-imagem.com/banner.jpg">
+        </div>
+
+        <div class="form-acoes">
+          <button type="submit" class="btn-salvar" [disabled]="!novoBanner.imagem">Adicionar ao Carrossel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="tabela-section" style="margin-top: 40px;">
+      <h2>Banners Ativos</h2>
+      <div class="table-responsive">
+        <table class="tabela-admin">
+          <thead>
+            <tr>
+              <th>Imagem</th>
+              <th>Título</th>
+              <th>Marca vinculada</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let banner of banners">
+              <td><img [src]="banner.imagem" alt="Banner" class="img-miniatura" style="width: 100px; height: 50px; object-fit: cover;"></td>
+              <td>{{ banner.titulo || '-' }}</td>
+              <td>{{ banner.marca || '-' }}</td>
+              <td class="acoes-td">
+                <button class="btn-excluir" (click)="excluirBanner(banner.id)">Excluir</button>
+              </td>
+            </tr>
+            <tr *ngIf="banners.length === 0">
+              <td colspan="4" style="text-align: center; padding: 20px;">Nenhum banner cadastrado no carrossel.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<app-footer></app-footer>

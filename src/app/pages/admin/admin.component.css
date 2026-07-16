@@ -1,0 +1,317 @@
+.admin-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: 70vh;
+}
+
+.titulo-admin {
+  color: #e88a8a;
+  font-family: serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.abas {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ffe3e6;
+  padding-bottom: 10px;
+}
+
+.abas button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #7a7a7a;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.abas button:hover {
+  background-color: #fff5f6;
+}
+
+.abas button.ativo {
+  background-color: #e88a8a;
+  color: white;
+  font-weight: bold;
+}
+
+.alerta-sucesso {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #c3e6cb;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.formulario-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #ffe3e6;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.formulario-section h2 {
+  color: #5c5c5c;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ffe3e6;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group label {
+  color: #5c5c5c;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+ .form-group textarea{
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+  background-color: #fafafa;
+}
+
+.form-group input:focus {
+  border-color: #e88a8a;
+  background-color: #fff;
+}
+.form-group textarea:focus {
+  border-color: #e88a8a;
+  background-color: #fff;
+
+}
+.form-acoes {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.btn-salvar {
+  background-color: #e88a8a;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-salvar:hover {
+  background-color: #ffb1b1;
+}
+
+.btn-cancelar {
+  background-color: transparent;
+  color: #5c5c5c;
+  border: 1px solid #ccc;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-cancelar:hover {
+  background-color: #eee;
+}
+
+.tabela-section h2 {
+  color: #5c5c5c;
+  margin-bottom: 20px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.tabela-admin {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid #ffe3e6;
+}
+
+.tabela-admin th, .tabela-admin td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  color: #5c5c5c;
+  vertical-align: middle;
+}
+
+.tabela-admin th {
+  background-color: #fff5f6;
+  font-weight: bold;
+  color: #e88a8a;
+}
+
+.img-miniatura {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  padding: 2px;
+}
+
+.acoes-td {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-editar {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-editar:hover {
+  background-color: #45a049;
+}
+
+.btn-excluir {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-excluir:hover {
+  background-color: #d32f2f;
+}
+
+.construcao-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  border: 1px solid #ffe3e6;
+  border-radius: 12px;
+  color: #5c5c5c;
+}
+
+.placeholder-carrossel {
+  font-size: 2.5rem;
+  margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .abas {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .btn-salvar, .btn-cancelar {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .form-acoes {
+    flex-direction: column-reverse;
+  }
+
+  .tabela-admin thead {
+    display: none;
+  }
+
+  .tabela-admin, .tabela-admin tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .tabela-admin tbody tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ffe3e6;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    background-color: #fff;
+  }
+
+  .tabela-admin td {
+    display: block;
+    border-bottom: none;
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .img-miniatura {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .acoes-td {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
+    border-top: 1px dashed #eee;
+    padding-top: 15px;
+  }
+
+  .acoes-td button {
+    flex: 1;
+    padding: 12px;
+  }
+}

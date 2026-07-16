@@ -35,6 +35,13 @@
           Compra
         </a>
       </li>
+
+      <li class="nav-item" *ngIf="authService.isLoggedIn() && authService.isAdmin()">
+        <a class="nav-link d-flex align-items-center gap-2 link-admin-secreto" routerLink="/admin" routerLinkActive="active" (click)="close()">
+          <i class="bi bi-gear"></i>
+          Painel Admin
+        </a>
+      </li>
     </ul>
   </div>
 

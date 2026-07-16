@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
 
  ngOnInit(): void {
-    this.produtoService.getProdutos().subscribe({
+    this.produtoService.getProdutos().subscribe({ 
       next: (dados) => {
         
         this.produtosMaisVendidos = dados.slice(0, 3);

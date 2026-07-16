@@ -25,6 +25,11 @@ export class CartService {
     this.cartCount.next(this.items.reduce((total, item) => total + (item.quantidade ?? 1), 0));
   }
 
+  removerItem(produtoId: number) {
+    this.items = this.items.filter(item => item.id !== produtoId);
+    this.cartCount.next(this.items.reduce((total, item) => total + (item.quantidade ?? 1), 0));
+  }
+
   getItems() {
     return this.items;
   }
@@ -36,7 +41,7 @@ export class CartService {
   getSubtotal() {
     return this.items.reduce((total, item) => total + (item.preco * (item.quantidade ?? 1)), 0);
   }
-
+  
   getItemCount() {
     return this.items.length;
   }

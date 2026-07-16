@@ -1,6 +1,6 @@
 <main class="auth-page">
   <div class="auth-card">
-    <img class= "auth-img"  src="/assents/logo.png" alt="">
+    <img class="auth-img" src="/assents/logo.png" alt="Logo">
     <p class="auth-subtitle">Insira seus dados para acessar sua conta.</p>
 
     <div class="alerta alerta-erro" *ngIf="erroMensagem">{{ erroMensagem }}</div>
@@ -13,10 +13,10 @@
 
       <div class="form-group">
         <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" [(ngModel)]="senha" class="form-control" placeholder="Sua senha secreta" required>
+        <input type="password" id="senha" name="senha" [(ngModel)]="senha" class="form-control" placeholder="Sua senha" required>
       </div>
 
-      <a href="#" class="forgot-password">Esqueci minha senha</a>
+      <a href="javascript:void(0)" class="forgot-password">Esqueci minha senha</a>
 
       <button type="submit" class="btn-auth">Entrar</button>
     </form>
@@ -24,5 +24,6 @@
     <div class="auth-links">
       <p>Novo por aqui? <a routerLink="/cadastro">Criar uma conta</a></p>
     </div>
+
   </div>
 </main>

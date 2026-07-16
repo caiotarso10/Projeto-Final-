@@ -1,30 +1,30 @@
-<div id="carouselExampleDark" #carouselRef class="carousel carousel-dark slide">
+<div *ngIf="banners.length > 0" id="carouselExampleDark" #carouselRef class="carousel carousel-dark slide">
+  
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" 
+      *ngFor="let banner of banners; let i = index"
+      data-bs-target="#carouselExampleDark" 
+      [attr.data-bs-slide-to]="i" 
+      [class.active]="i === 0" 
+      [attr.aria-current]="i === 0 ? 'true' : null" 
+      [attr.aria-label]="'Slide ' + (i + 1)">
+    </button>
   </div>
+  
   <div class="carousel-inner">
-    
-    <div class="carousel-item active">
-      <div class="carrossel-frame" [routerLink]="['/catalogo']" [queryParams]="{ marca: 'eudora' }" style="cursor: pointer;">
-        <img src="/assents/eudora-logo.png" class="carrossel-img" alt="Eudora">
-      </div>
+    <div class="carousel-item" *ngFor="let banner of banners; let i = index" [class.active]="i === 0">
+      
+      <div class="carrossel-frame" 
+           [routerLink]="['/catalogo']" 
+           [queryParams]="banner.marca ? { marca: banner.marca } : {}" 
+           style="cursor: pointer;">
+        
+        <img [src]="banner.imagem" class="carrossel-img" [alt]="banner.titulo || 'Banner da Loja'">
+        
+        </div>
     </div>
-    
-    <div class="carousel-item">
-      <div class="carrossel-frame" [routerLink]="['/catalogo']" [queryParams]="{ marca: 'natura' }" style="cursor: pointer;">
-        <img src="/assents/natura-logo.png" class="carrossel-img" alt="Natura">
-      </div>
-    </div>
-    
-    <div class="carousel-item">
-      <div class="carrossel-frame" [routerLink]="['/catalogo']" [queryParams]="{ marca: 'oboticario' }" style="cursor: pointer;">
-        <img src="/assents/oboticario-logo.png" class="carrossel-img" alt="O Boticário">
-      </div>
-    </div>
-    
   </div>
+  
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -33,4 +33,8 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+
+<div *ngIf="banners.length === 0" class="text-center py-5">
+  <p class="text-muted">Nenhum destaque no momento.</p>
 </div>
