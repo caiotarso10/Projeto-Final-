@@ -21,7 +21,7 @@ export class CatalogoComponent implements OnInit {
   handleLogout(): void {}
 
   private produtoService = inject(ProdutoService);
-  private route = inject(ActivatedRoute); // 2. Injeção da rota ativa
+  private route = inject(ActivatedRoute); 
 
   todosProdutos: any[] = [];      
   produtosExibidos: any[] = [];  
@@ -29,17 +29,17 @@ export class CatalogoComponent implements OnInit {
   marcaSelecionada: string = 'Todas';
 
   ngOnInit() {
-    // Busca os dados através do Service
+    
     this.produtoService.getProdutos().subscribe({
       next: (data) => {
         this.todosProdutos = data;
         this.produtosExibidos = data;
 
-        // Extrai as marcas únicas da lista (usando Set para evitar duplicados)
+       
         const marcas = this.todosProdutos.map(p => p.marca);
         this.marcasDisponiveis = ['Todas', ...new Set(marcas)];
 
-        // 3. A MÁGICA: Escuta a URL após os produtos estarem carregados
+  
         this.ouvirParametrosDaUrl();
       },
       error: (err) => {
@@ -48,27 +48,26 @@ export class CatalogoComponent implements OnInit {
     });
   }
 
-  // Função auxiliar para monitorar a URL
+  
   private ouvirParametrosDaUrl() {
     this.route.queryParams.subscribe(params => {
       const marcaUrl = params['marca'];
 
       if (marcaUrl) {
-        // Função interna para limpar acentos, espaços e maiúsculas
-        // Ex: "O Boticário" vira "oboticario" para bater certinho com o clique do carrossel
+     
         const normalizar = (texto: string) => 
           texto.toLowerCase()
                .normalize("NFD")
                .replace(/[\u0300-\u036f]/g, "")
                .replace(/\s/g, '');
 
-        // Procura se a marca da URL existe nas marcas que vieram da API
+
         const marcaEncontrada = this.marcasDisponiveis.find(
           marca => normalizar(marca) === normalizar(marcaUrl)
         );
 
         if (marcaEncontrada) {
-          this.marcaSelecionada = marcaEncontrada; // Define a marca (ex: "O Boticário")
+          this.marcaSelecionada = marcaEncontrada;
         } else {
           this.marcaSelecionada = 'Todas';
         }
@@ -76,12 +75,12 @@ export class CatalogoComponent implements OnInit {
         this.marcaSelecionada = 'Todas';
       }
 
-      // Aplica o filtro na tela
+      
       this.filtrarPorMarca();
     });
   }
 
-  // Sua lógica de filtro original (continua idêntica!)
+  
   filtrarPorMarca() {
     if (this.marcaSelecionada === 'Todas') {
       this.produtosExibidos = this.todosProdutos;

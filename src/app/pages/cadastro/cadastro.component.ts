@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
-import { FormsModule } from '@angular/forms'; // Muito importante para o ngModel funcionar!
+import { FormsModule } from '@angular/forms'; 
 import { AuthService } from '../../service/auth.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class CadastroComponent {
   nome = '';
   email = '';
   senha = '';
-  aceitouLGPD = false; // Controla o checkbox
+  aceitouLGPD = false; 
 
   erroMensagem = '';
   sucessoMensagem = '';

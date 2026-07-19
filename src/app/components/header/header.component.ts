@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output, OnInit, inject } from '@angular
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router'; 
 import { CartService } from '../../service/cart.service'; 
-import { AuthService } from '../../service/auth.service'; // 1. Importe o AuthService
+import { AuthService } from '../../service/auth.service'; 
 
 @Component({
   selector: 'app-header',
@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   @Output() logout = new EventEmitter<void>();
 
   private cartService = inject(CartService);
-  private authService = inject(AuthService); // 2. Injete o serviço aqui
+  private authService = inject(AuthService); 
   
   itemCount: number = 0;
 
@@ -35,10 +35,10 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogoutClick(): void {
-    // 3. Chame a função que limpa o armazenamento e redireciona a rota
+    
     this.authService.logout();
     
-    // Mantemos o seu emit para caso o componente pai precise saber que o logout ocorreu
+    
     this.logout.emit();
   }
 }

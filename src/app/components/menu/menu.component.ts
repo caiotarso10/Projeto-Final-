@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, OnDestroy, AfterViewInit, Output, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '../../service/auth.service'; // Certifique-se de que o caminho até o seu serviço está correto!
+import { AuthService } from '../../service/auth.service'; 
 
 declare var bootstrap: any;
 
@@ -13,7 +13,7 @@ declare var bootstrap: any;
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements AfterViewInit, OnDestroy {
-  // 👉 Injetamos o AuthService de forma pública para o menu.component.html usá-lo no *ngIf
+  
   public authService = inject(AuthService);
 
   @ViewChild('menuOffcanvas') menuOffcanvasRef!: ElementRef;

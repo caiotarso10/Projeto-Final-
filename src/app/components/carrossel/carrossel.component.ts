@@ -26,7 +26,7 @@ export class CarrosselComponent implements OnInit, OnDestroy {
         
         if (this.banners.length > 0) {
           setTimeout(() => {
-            // Se já existir uma instância, destrói antes de criar outra
+            
             if (this.carouselInstance) {
               this.carouselInstance.dispose();
             }
@@ -34,9 +34,9 @@ export class CarrosselComponent implements OnInit, OnDestroy {
             this.carouselInstance = new bootstrap.Carousel(this.carouselRef.nativeElement, {
               interval: 3000,
               ride: 'carousel',
-              wrap: true,        // garante o loop infinito
+              wrap: true,        
               touch: true,
-              pause: false       // 👈 A CORREÇÃO PRINCIPAL: nunca pausa no hover
+              pause: false       
             });
           }, 100);
         }
@@ -46,7 +46,7 @@ export class CarrosselComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Limpa a instância ao sair da página, evitando vazamento de memória
+  
     if (this.carouselInstance) {
       this.carouselInstance.dispose();
     }
