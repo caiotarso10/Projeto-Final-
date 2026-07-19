@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router'; // 1. Importação necessária para ler a URL
+import { ActivatedRoute } from '@angular/router'; 
 import { CardHomeComponent } from '../../components/card-home/card-home.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
